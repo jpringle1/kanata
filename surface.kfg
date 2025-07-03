@@ -36,9 +36,21 @@
     Backquote    1    2    3    4              8    9    0    -    =
     tab          q    w    e    r              i    o    p    [    ]
     CapsLock     a    s    d    f              k    l    ;    '    Backslash    
-                                c    v    m    ,
+                           x    c    v    m    ,    .
 )
 
+(defalias
+  ms↑ (movemouse-up 4 4)
+  ms← (movemouse-left 4 4)
+  ms↓ (movemouse-down 4 4)
+  ms→ (movemouse-right 4 4)
+
+  ms-up-smol (movemouse-up 4  1)
+  ms-down-smol (movemouse-down 4 1)
+  ms-left-smol (movemouse-left 4 1)
+  ms-right-smol (movemouse-right 4 1)
+)
+ 
 (defalias
     a (tap-hold 200 200 a lmeta)
     s (tap-hold 200 200 s lalt)
@@ -54,6 +66,9 @@
     tab (tap-hold 200 200 tab (layer-while-held func))
     bspc (tap-hold 200 200 Backspace (layer-while-held func))
     media (tap-hold 200 200 mute pp)
+
+    lmse (tap-hold 200 200 mltp (layer-while-held mouse))
+    rmse (tap-hold 200 200 mrtp (layer-while-held mouse))
 
     1 (tap-hold 200 200 1 f1)
     2 (tap-hold 200 200 2 f2)
@@ -77,24 +92,31 @@
 )
 
 (deflayer base
-    q     w    e    r    t                        y    u    i    o    p
-    @a    @s    @d    @f    g                        h    @j    @k    @l    @;
-    z     x    c    v    b     	                 n    m    ,    .    /
-                        @bspc    @space-mod    @return-mod    @tab
+    q     w     e     r     t                        y    u    i    o    p
+    @a    @s    @d    @f    g                        h    @j   @k   @l    @;
+    z     x     c     v     b     	             n    m    ,    .    /
+                      @lmse @bspc @space-mod @return-mod @tab @rmse
 )
 
 (deflayer num-sym
     $exc    $dqm      $uds    @par     @cur                  =       $mns    $pls    $ask    $per
     @1      @2        @3      @4       @5                    @6      @7      @8      @9      @0
-    $non     @thn      @brk    @brc     \                     $pip    $tld    `       '       $ats
-                                       $non    F11    F12    $non
+    $non    @thn      @brk    @brc     \                     $pip    $tld    `       '       $ats
+                              $non     $non    F11     F12   $non    $non
 )
 
 (deflayer func
     prev    voldwn    volu     next    @media                  $non    $non        $non        $non        $non
-    lft     down      up       rght    del                     ins    left       down       up         rght
-    home    pgdn      pgup     end     $non                     $non    home       pgdn       pgup       end
-                                       $non    $non      $non     $non
+    lft     down      up       rght    del                     ins     left       down       up         rght
+    home    pgdn      pgup     end     $non                    $non    home       pgdn       pgup       end
+                               $non    $non    $non    $non    $non    $non
+)
+
+(deflayer mouse
+   @ms-left-smol    @ms-down-smol    @ms-up-smol    @ms-right-smol    $non                    $non    @ms-left-smol    @ms-down-smol    @ms-up-smol    @ms-right-smol
+   @ms←    @ms↓    @ms↑    @ms→    $non                                                $non    @ms←    @ms↓    @ms↑    @ms→
+   $non    $non    $non    $non    $non                                                $non    $non    $non    $non    $non
+                           $non    $non    $non                                $non    $non    $non    
 )
 
 
