@@ -1,0 +1,7 @@
+(deflayer default
+    -          1        2        3       4        5
+    tab        t        q        w       e        r
+    i          lshft    a        s       d        f
+    g          F1       z        x       c        v
+                        -        lalt    lctrl    spc
+)
