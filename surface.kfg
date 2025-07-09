@@ -110,14 +110,14 @@
 
 (deflayer func
     prev    voldwn    volu     next    @media                  $non    $non        $non        $non        $non
-    lft     down      up       rght    del                     ins     left       down       up         rght
+    del     lft     down      up       rght                     left       down       up         rght         ins
     home    pgdn      pgup     end     $non                    $non    home       pgdn       pgup       end
                                $non    $non    $non    $non    $non    $non
 )
 
 (deflayer mouse
    @ms-left-smol    @ms-down-smol    @ms-up-smol    @ms-right-smol    $non                    $non    @ms-left-smol    @ms-down-smol    @ms-up-smol    @ms-right-smol
-   @ms←    @ms↓    @ms↑    @ms→    $non                                                $non    @ms←    @ms↓    @ms↑    @ms→
+   $non    @ms←    @ms↓    @ms↑    @ms→                                                @ms←    @ms↓    @ms↑    @ms→    $non
    $non    $non    $non    $non    $non                                                $non    $non    $non    $non    $non
                            $non    $non    $non                                $non    $non    $non    
 )
